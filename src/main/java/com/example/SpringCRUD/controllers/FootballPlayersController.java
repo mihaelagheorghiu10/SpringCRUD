@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/players")
@@ -59,6 +60,17 @@ public class FootballPlayersController {
         FootballPlayer playerToUpdate = this.playerList.stream().filter(player -> player.getId().equals(id)).findFirst().get();
         playerToUpdate.setName(newPlayerData.getName());
         return playerToUpdate;
+    }
+
+    @GetMapping("search")
+    public List<FootballPlayer> searchPlayerBy(@RequestParam(required = false)String name){
+        if(name==null)return null;
+        List<FootballPlayer> filteredPlayers=this.playerList.stream().filter(
+                player->player.getName()
+                        .toLowerCase()
+                        .contains(name.toLowerCase())
+        ).toList();
+        return  filteredPlayers;
     }
 
 }
