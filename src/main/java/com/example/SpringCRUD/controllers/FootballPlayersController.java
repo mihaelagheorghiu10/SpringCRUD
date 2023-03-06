@@ -26,7 +26,7 @@ public class FootballPlayersController {
     }
 
     @GetMapping("{id}")
-    public FootballPlayer getById(@PathVariable UUID id){
+    public FootballPlayer getPlayerById(@PathVariable UUID id){
 //        for(FootballPlayer player:this.playerList){
 //            if(player.getId().equals(id)){
 //                return player;
