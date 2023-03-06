@@ -54,6 +54,13 @@ public class FootballPlayersController {
         return playerToDelete;
     }
 
+    @PutMapping("{id}")
+    public FootballPlayer updatePlayerById(@PathVariable UUID id, @RequestBody FootballPlayer newPlayerData){
+        FootballPlayer playerToUpdate = this.playerList.stream().filter(player -> player.getId().equals(id)).findFirst().get();
+        playerToUpdate.setName(newPlayerData.getName());
+        return playerToUpdate;
+    }
+
 }
 
 
