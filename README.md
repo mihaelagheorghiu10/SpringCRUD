@@ -11,6 +11,7 @@ To generate a CRUD Rest Api to manage a list of football players.
 #### Football Player
 
 UUID id
+
 String name
 
 ### Controller - Endpoints
