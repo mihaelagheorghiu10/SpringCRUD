@@ -1,10 +1,7 @@
 package com.example.SpringCRUD.controllers;
 
 import com.example.SpringCRUD.models.FootballPlayer;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +16,7 @@ public class FootballPlayersController {
             new FootballPlayer("Neymar Jr." ),
             new FootballPlayer("Andrés Iniesta" ),
             new FootballPlayer("Dani Alves" )
+
     ) );
     @GetMapping
     public List<FootballPlayer> getAllPlayers(){
@@ -39,6 +37,12 @@ public class FootballPlayersController {
                                 .equals(id))
                 .findFirst()
                 .get();
+    }
+
+    @PostMapping
+    public FootballPlayer createPlayer(@RequestBody FootballPlayer player){
+        this.playerList.add(player);
+        return player;
     }
 
 
