@@ -45,7 +45,15 @@ public class FootballPlayersController {
         return player;
     }
 
-
-
+    @DeleteMapping("{id}")
+    public FootballPlayer deletePlayerById(@PathVariable UUID id) {
+//        this.playerList.removeIf(player -> player.getId().equals(id));
+//        return null;
+        FootballPlayer playerToDelete = this.playerList.stream().filter(player -> player.getId().equals(id)).findFirst().get();
+        this.playerList.remove(playerToDelete);
+        return playerToDelete;
+    }
 
 }
+
+
