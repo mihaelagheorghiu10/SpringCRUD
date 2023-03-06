@@ -33,7 +33,7 @@ String name
 <td>PUT</td><td>/players</td><td>FootballPlayer</td><td>updatePlayerById(id,newPlayerData)</td><td>UUID id, FootballPlayer newPlayerData</td>
 </tr>
 <tr>
-<td>GET</td><td>/players</td><td>List&lt;FootballPlayer&gt;</FootballPlayer></td><td>searchPlayerBy(name)</td><td>String name</td>
+<td>GET</td><td>/players</td><td>List&lt;FootballPlayer&gt;</td><td>searchPlayerBy(name)</td><td>String name</td>
 </tr>
 
 </table>
