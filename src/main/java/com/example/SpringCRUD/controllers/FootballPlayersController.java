@@ -1,6 +1,7 @@
 package com.example.SpringCRUD.controllers;
 
 import com.example.SpringCRUD.models.FootballPlayer;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,12 @@ public class FootballPlayersController {
             new FootballPlayer("Neymar Jr." ),
             new FootballPlayer("Andrés Iniesta" ),
             new FootballPlayer("Dani Alves" )
-
     ) );
+    @GetMapping
+    public List<FootballPlayer> getAllPlayers(){
+        return playerList;
+    }
+
+
 
 }
